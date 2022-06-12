@@ -1,0 +1,43 @@
+cd ..
+mkdir Work_Datastax
+cd Work_Datastax
+git clone https://github.com/YoshiyukiKono/datastax-astra-python-fastapi.git
+conda create -n datastax -y python=3 pip
+conda activate datastax
+python -v
+python --version
+pip --version
+cd datastax-astra-python-fastapi
+git pull
+pip install fastapi
+pip install uvicorn[standard]
+vi main.py
+vscode main.py
+code main.py
+uvicorn main:app --reload
+code test.py
+history
+doskey /h > history.txt
+code history.txt
+pip install cassandra-driver
+python -c 'import cassandra; print (cassandra.__version__)'
+python test.py
+python -c 'import cassandra; print (cassandra.__version__)'
+code connect_astra.py
+code .gitignore
+python ./connect_astra.py
+pip install astrapy
+code env.bat
+./env.bat
+env.bat
+set
+code test_astra.py
+python test_astra.py
+python ./connect_astra.py
+doskey /h > history.txt
+code ./connect_astra.py
+python ./connect_astra.py
+python ./astra_main.py
+python ./main.py
+uvicorn astra_main:app --reload
+doskey /h > history.txt

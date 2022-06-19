@@ -13,6 +13,11 @@ session = cluster.connect()
 
 app = FastAPI()
 
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: bool = None
+
 class Member(BaseModel):
     first_name: str
     last_name: str
@@ -20,21 +25,31 @@ class Member(BaseModel):
 
 @app.get("/")
 async def read_root():
-    return {"Status": "On"}
+    return {"Hello": "World"}
 
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int, q: str = None):
+    return {"item_id": item_id, "q": q}
+
+
+@app.put("/items/{item_id}")
+def update_item(item_id: int, item: Item):
+    print('kono test')
+    return {"item_name": item.name, "item_id": item_id}
 
 @app.get("/members/{member_id}")
 async def read_member(member_id: str):
-
-    row = session.execute("select first_name, last_name from test.member where id = %s",[member_id]).one()
-
+    #row = session.execute("""select first_name, last_name from test.member where id = %s""",(member_id)).one()
+    row = session.execute("select first_name, last_name from test.member where id = '" + member_id + "'").one()
+    #row = session.execute("select first_name, last_name from test.member where id = '123'").one()
     if row:
         return {"member_id": member_id, "first_name":row[0], "last_name": row[1]}
     else:
         return {"member_id": member_id}
 
-@app.put("/members/upsert/{member_id}")
-def upsert_member(member_id: str, member: Member):
+@app.put("/members/{member_id}")
+def update_member(member_id: str, member: Member):
     print('put member')
     session.execute("""
         insert into test.member (id, first_name, last_name)
@@ -44,10 +59,5 @@ def upsert_member(member_id: str, member: Member):
     )
     return {"member_id": member_id}
 
-@app.get("/members/delete/{member_id}")
-async def delete_member(member_id: str):
 
-    row = session.execute("delete from test.member where id = %s",[member_id]).one()
-
-    return {"deleted": member_id}
 

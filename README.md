@@ -14,6 +14,11 @@ pip --version
 pip 21.2.4 from C:\Users\yoshi\Anaconda3\envs\datastax\lib\site-packages\pip (python 3.10)
 ```
 
+```
+pip install fastapi
+pip install uvicorn[standard]
+```
+
 ## Data
 
 ### keyspace: `test`
@@ -26,3 +31,16 @@ CREATE TABLE test.member (
     last_name text
 ) 
 ```
+
+## Configure
+
+```
+```
+
+## Usage
+
+```
+uvicorn astra_main:app --reload
+```
+
+### 

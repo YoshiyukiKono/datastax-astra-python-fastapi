@@ -1,6 +1,12 @@
 # datastax-astra-python-fastapi
 
-## Environment
+## On this repository
+
+DataStax Astra DBをご利用になる際には、
+
+## Preparation
+
+## My Local Environment
 
 ```
 conda create -n datastax -y python=3 pip
@@ -14,6 +20,7 @@ pip --version
 pip 21.2.4 from C:\Users\yoshi\Anaconda3\envs\datastax\lib\site-packages\pip (python 3.10)
 ```
 
+## Python Package
 ```
 pip install fastapi
 pip install uvicorn[standard]

@@ -43,4 +43,8 @@ CREATE TABLE test.member (
 uvicorn astra_main:app --reload
 ```
 
+Open the following link 
+
+http://12.0.0.1/8000/docs
+
 ### 

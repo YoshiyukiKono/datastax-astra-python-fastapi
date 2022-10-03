@@ -4,9 +4,9 @@
 
 ## About this repository
 Developers using DataStax AstraDB can easily verify connections from various programming languages by following specific instructions provided in the AstraDB control plane (on the Connect tab of the database dashboard).
-The sample program used there, for example, in Python, as its name(`connect_database.pythe`) suggests, connects to the database and displays information in the system table (`system.local`), for connection confirmation.
+The sample program used there, for example, in Python, as its name(`connect_database.py`) suggests, connects to the database and displays information in the system table (`system.local`), for connection confirmation.
 
-The purpose of this repository is to go a step further from the sample program above and provide code for custom REST API development that covers CRUD operations on non-system tables.
+The purpose of this repository is to go a step further from the sample program above and provide code for custom REST API development that covers CRUD operations on a user-defined table, not a system table like `system.local`.
 
 By default, AstraDB provides a REST API for CRUD operations on Cassandra tables.
 So at first glance, the code we're dealing with might look like reinventing the wheel.

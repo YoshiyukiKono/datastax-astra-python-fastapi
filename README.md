@@ -58,7 +58,7 @@ CREATE TABLE test.member (
 
 ## Configure
 
-Please edit `astra_main.py` by following the instructions provied in the AstraDB control plane (on the Connect tab of the database dashboard).
+Please edit `astra_main.py` by following the instructions provided in the AstraDB control plane (on the Connect tab of the database dashboard).
 
 ## Usage
 
